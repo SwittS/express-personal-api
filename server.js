@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
 
 /**********
  * ROUTES *
@@ -62,6 +62,19 @@ app.get('/api', function api_index(req, res) {
     ]
   });
 });
+
+  app.get('/api/profile', function api_profile(req, res){
+    res.json({
+      name: "Switt Srikulacheep",
+      current_city: "San Francisco",
+      hometown: "Chicago",
+      occupation: "Student at General Assembly",
+      email: "switt.srikulacheep@gmail.com",
+      documentation_url: "https://github.com/SwittS/express-personal-api/blob/master/README.md",
+      base_url: "https://powerful-savannah-76554.herokuapp.com/"
+    });
+
+  });
 
 /**********
  * SERVER *

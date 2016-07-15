@@ -45,7 +45,11 @@ app.get('/', function homepage(req, res) {
 app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   res.json({
-    message: "Welcome to my personal api! Here's what you need to know!",
+    name: "Switt Srikulacheep",
+    current_city: "San Francisco",
+    hometown: "Chicago",
+    occupation: "Student at General Assembly",
+    email: "switt.srikulacheep@gmail.com",
     documentation_url: "https://github.com/SwittS/express-personal-api/blob/master/README.md",
     base_url: "https://powerful-savannah-76554.herokuapp.com/",
     endpoints: [

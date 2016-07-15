@@ -45,16 +45,18 @@ app.get('/', function homepage(req, res) {
 app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   res.json({
-    woops_i_has_forgot_to_document_all_my_endpoints: true, // CHANGE ME ;)
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentation_url: "https://github.com/example-username/express_self_api/README.md", // CHANGE ME
-    base_url: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
+    documentation_url: "https://github.com/SwittS/express-personal-api/blob/master/README.md",
+    base_url: "https://powerful-savannah-76554.herokuapp.com/",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "Data about me"},
+      {method: "GET", path: "/api/dancemoves", description: "Index of all the dance moves"},
+      {method: "POST", path: "/api/dancemoves", description: "Create a new dance move entry"},
+      {method: "PUT", path: "/api/dancemoves/:id", description: "Edit a previous dance move entry and update it"},
+      {method: "DELETE", path: "/api/dancemoves/:id", description: "Destroy a dance move"}
     ]
-  })
+  });
 });
 
 /**********

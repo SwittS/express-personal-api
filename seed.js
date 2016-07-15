@@ -1,15 +1,24 @@
 // This file allows us to seed our application with data
 // simply run: `node seed.js` from the root of this project folder.
 
-// var db = require('./models');
+var db = require('./models');
 
+var dance_moves = [
+  {
+    name: "The Pelvic Thrust",
+    yearCreated: 1957,
+    participation: "Solo and Partner",
+    socialContext: "Concert, Erotic, and Social",
+    url: "TBD"
+  }
+];
 // var new_campsite = {description: "Sharp rocks. Middle of nowhere."}
-
+//
 // db.Campsite.create(new_campsite, function(err, campsite){
 //   if (err){
 //     return console.log("Error:", err);
 //   }
-
+//
 //   console.log("Created new campsite", campsite._id)
 //   process.exit(); // we're all done! Exit the program.
 // })

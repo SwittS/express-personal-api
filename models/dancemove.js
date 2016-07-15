@@ -3,12 +3,12 @@ var mongoose = require('mongoose'),
 
 var DancemoveSchema = new Schema({
   name: String,
-  year_created: Number,
+  yearCreated: Number,
   participation: String,
-  social_context: String,
+  socialContext: String,
   url: String
 });
 
-var Dance_move = mongoose.model('Dancemove', DancemoveSchema);
+var Dancemove = mongoose.model('Dancemove', DancemoveSchema);
 
-module.exports = Dance_move;
+module.exports = Dancemove;

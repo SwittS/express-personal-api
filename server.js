@@ -54,7 +54,7 @@ app.get('/api', function api_index(req, res) {
     base_url: "https://powerful-savannah-76554.herokuapp.com/",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"},
+      {method: "GET", path: "/api/profile", description: "Who I am and where I'm from"},
       {method: "GET", path: "/api/dancemoves", description: "Index of all the dance moves"},
       {method: "POST", path: "/api/dancemoves", description: "Create a new dance move entry"},
       {method: "PUT", path: "/api/dancemoves/:id", description: "Edit a previous dance move entry and update it"},
@@ -63,8 +63,8 @@ app.get('/api', function api_index(req, res) {
   });
 });
 
-  app.get('/api/profile', function api_profile(req, res){
-    res.json({
+app.get('/api/profile', function (req, res){
+  res.json({
       name: "Switt Srikulacheep",
       current_city: "San Francisco",
       hometown: "Chicago",
@@ -72,9 +72,14 @@ app.get('/api', function api_index(req, res) {
       email: "switt.srikulacheep@gmail.com",
       documentation_url: "https://github.com/SwittS/express-personal-api/blob/master/README.md",
       base_url: "https://powerful-savannah-76554.herokuapp.com/"
-    });
-
   });
+});
+
+// get all dance moves
+app.get('/api/dancemoves', function (req, res){
+    
+  });
+});
 
 /**********
  * SERVER *

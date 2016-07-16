@@ -43,7 +43,6 @@ app.get('/', function homepage(req, res) {
  */
 
 app.get('/api', function api_index(req, res) {
-  // TODO: Document all your api endpoints below
   res.json({
     name: "Switt Srikulacheep",
     current_city: "San Francisco",
@@ -77,7 +76,10 @@ app.get('/api/profile', function (req, res){
 
 // get all dance moves
 app.get('/api/dancemoves', function (req, res){
-    
+  console.log("sanity check!!!!");
+  db.Dancemove.find(function(err, dancemoves){
+     if (err) { return console.log("index error: " + err); }
+     res.json(dancemoves);
   });
 });
 

@@ -1,5 +1,5 @@
-var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 var DancemoveSchema = new Schema({
   name: String,
@@ -10,5 +10,4 @@ var DancemoveSchema = new Schema({
 });
 
 var Dancemove = mongoose.model('Dancemove', DancemoveSchema);
-
 module.exports = Dancemove;

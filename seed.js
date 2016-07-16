@@ -12,13 +12,14 @@ var dance_moves = [
     url: "TBD"
   }
 ];
-// var new_campsite = {description: "Sharp rocks. Middle of nowhere."}
-//
-// db.Campsite.create(new_campsite, function(err, campsite){
-//   if (err){
-//     return console.log("Error:", err);
-//   }
-//
-//   console.log("Created new campsite", campsite._id)
-//   process.exit(); // we're all done! Exit the program.
-// })
+db.Dancemove.remove({}, function(err, dancemove) {
+  console.log('removed all dancemoves');
+});
+
+db.Dancemove.create(dance_moves, function(err, dancemove){
+  if (err){
+    return console.log("Error: ", err);
+  }
+  console.log("Created new dancemove", dancemove);
+  process.exit();
+});

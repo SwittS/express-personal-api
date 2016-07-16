@@ -92,7 +92,13 @@ app.get('/api/dancemoves/:_id', function (req, res) {
 // create new dancemove
 app.post('/api/dancemoves', function (req, res) {
   console.log('dancemoves create', req.body);
-  var newDancemove = new db.Dancemove(req.body);
+  var newDancemove = new db.Dancemove({
+    name: req.body.name,
+    yearCreated: req.body.yearCreated,
+    participation: req.body.participation,
+    socialContext: req.body.socialContext,
+    url: req.body.url,
+  });
   newDancemove.save(function handleDBDancemoveSaved(err, savedDancemove) {
     res.json(savedDancemove);
   });

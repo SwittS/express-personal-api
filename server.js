@@ -74,14 +74,31 @@ app.get('/api/profile', function (req, res){
   });
 });
 
-// get all dance moves
+// get all dancemoves
 app.get('/api/dancemoves', function (req, res){
-  console.log("sanity check!!!!");
   db.Dancemove.find(function(err, dancemoves){
      if (err) { return console.log("index error: " + err); }
      res.json(dancemoves);
   });
 });
+// get one dancemove
+app.get('/api/dancemoves/:_id', function (req, res) {
+  db.Dancemove.findOne({_id: req.params._id }, function(err, oneDancemove) {
+    if (err) {console.log(err);}
+    res.json(oneDancemove);
+  });
+});
+
+// create new dancemove
+app.post('/api/dancemoves', function (req, res) {
+  console.log('dancemoves create', req.body);
+  var newDancemove = new db.Dancemove(req.body);
+  newDancemove.save(function handleDBDancemoveSaved(err, savedDancemove) {
+    res.json(savedDancemove);
+  });
+});
+
+
 
 /**********
  * SERVER *

@@ -12,14 +12,17 @@ var dance_moves = [
     url: "TBD"
   }
 ];
-db.Dancemove.remove({}, function(err, dancemove) {
-  console.log('removed all dancemoves');
-});
 
-db.Dancemove.create(dance_moves, function(err, dancemove){
-  if (err){
-    return console.log("Error: ", err);
+db.Dancemove.remove({}, function(err, dancemove) {
+  if(err) {
+    console.log('Error occured in remove', err);
+  } else {
+    console.log('removed all dancemoves');
+
+  db.Dancemove.create(dance_moves, function(err, dancemove){
+      if (err){ return console.log("Error: ", err); }
+      console.log("Created new dancemove", dancemove);
+      process.exit();
+    });
   }
-  console.log("Created new dancemove", dancemove);
-  process.exit();
 });

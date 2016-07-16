@@ -89,7 +89,7 @@ app.get('/api/dancemoves/:_id', function (req, res) {
   });
 });
 
-// create new dancemove
+// create new dancemove with form data
 app.post('/api/dancemoves', function (req, res) {
   console.log('dancemoves create', req.body);
   var newDancemove = new db.Dancemove({
@@ -104,6 +104,14 @@ app.post('/api/dancemoves', function (req, res) {
   });
 });
 
+// delete book by id
+app.delete('/api/dancemoves/:id', function (req, res) {
+  console.log(req.params);
+  var dancemoveId = req.params.id;
+  db.Dancemove.findOneAndRemove({ _id: dancemoveId }, function (err, deletedDancemove) {
+    res.json(deletedDancemove);
+  });
+});
 
 
 /**********

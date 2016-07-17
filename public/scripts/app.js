@@ -17,7 +17,7 @@ $(document).ready(function(){
     error: handleError
   });
 
-  $('#newDancemove').on('submit', function(e) {
+  $('#newDancemoveForm').on('submit', function(e) {
     e.preventDefault();
     $.ajax({
       method: 'POST',
@@ -26,6 +26,7 @@ $(document).ready(function(){
       success: newDancemoveSuccess,
       error: newDancemoveError
     });
+  });
 
     $dancemovesList.on('click', '.deleteBtn', function() {
       $.ajax({
@@ -35,8 +36,6 @@ $(document).ready(function(){
         error: deleteDancemoveError
       });
     });
-  });
-});
 
 function render () {
   $dancemovesList.empty();
@@ -60,16 +59,17 @@ function render () {
     }
 
     function newDancemoveError() {
-
+      console.log('Sorry, the dance move was not created!');
     }
 
     function deleteDancemoveSuccess(json){
       var dancemove = json;
+      console.log(json);
       var dancemoveId = dancemove._id;
-
-      for(var index = 0; index < allDancemoves.length; index++){
-        if(allDancemoves[index]._id === dancemoveId){
-          allDancemoves.splice(index, 1);
+      console.log('Delete this dance move:', dancemoveId);
+      for(var i = 0; i < allDancemoves.length; i++){
+        if(allDancemoves[i]._id === dancemoveId){
+          allDancemoves.splice(i, 1);
           break;
         }
       }
@@ -77,5 +77,6 @@ function render () {
     }
 
     function deleteDancemoveError(){
-
+      console.log("The dance move was not deleted correctly.");
     }
+});

@@ -26,7 +26,7 @@
           <form class="form-inline" action="/api/dancemoves" method="POST" id="newDancemoveForm">
             <div class="form-group">
               <label for="title">New Dance move: </label>
-              <input type="text" class="form-control" name="name" placeholder="Dancemove name">
+              <input type="text" class="form-control" name="name" placeholder="Dance move name">
             </div>
             <div class="form-group">
               <label for="title">Year Created: </label>
@@ -41,7 +41,7 @@
               <input type="text" class="form-control" name="socialContext" placeholder="Social Context">
             </div>
             <div class="form-group">
-              <label for="title">url: </label>
+              <label for="title">URL: </label>
               <input type="text" class="form-control" name="url" placeholder="URL of gif">
             </div>
             <button type="submit" class="btn btn-default">Create dancemove</button>
@@ -52,7 +52,7 @@
           <hr>
           <table class="table table-bordered">
             <TR>
-              <TH COLSPAN="5"><BR><H3>List of dance moves</H3>
+              <TH COLSPAN="6"><BR><H3>List of dance moves</H3>
               </TH>
            </TR>
            <TR>
@@ -61,6 +61,7 @@
               <TH>Participation</TH>
               <TH>Social Context</TH>
               <TH>Dance</TH>
+              <TH>Remove Dance</TH>
            </TR>
            {{#each dancemoves}}
            <TR ALIGN="CENTER">
@@ -69,7 +70,7 @@
               <TD>{{participation}}</TD>
               <TD>{{socialContext}}</TD>
               <TD>{{url}}</TD>
-              <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
+              <TD><button type="button" name="button" class="deleteBtn btn btn-danger center" data-id={{_id}}>Delete</button></TD>
            </TR>
           {{/each}}
         </script>

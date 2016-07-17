@@ -49,28 +49,42 @@
           <div id='dancemoveTarget'>
         <!-- handlebars template -->
         <script id="dancemoves-template" type="text/x-handlebars-template">
-          {{#each dancemoves}}
           <hr>
-          <p>
-            <b>{{name}}</b>
-            <b>{{yearCreated}}</b>
-            <b>{{participation}}</b>
-            <b>{{socialContext}}</b>
-            <b>{{url}}</b>
-            <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
-          </p>
+          <table class="table table-bordered">
+            <TR>
+              <TH COLSPAN="5"><BR><H3>List of dance moves</H3>
+              </TH>
+           </TR>
+           <TR>
+              <TH>Name</TH>
+              <TH>Year Created</TH>
+              <TH>Participation</TH>
+              <TH>Social Context</TH>
+              <TH>Dance</TH>
+           </TR>
+           {{#each dancemoves}}
+           <TR ALIGN="CENTER">
+              <TD>{{name}}</TD>
+              <TD>{{yearCreated}}</TD>
+              <TD>{{participation}}</TD>
+              <TD>{{socialContext}}</TD>
+              <TD>{{url}}</TD>
+              <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
+           </TR>
           {{/each}}
         </script>
         </div>
       </div>
     </div>
-    <div class="container">
+
+</table>
+    <!-- <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <h1>Under Construction</h1>
           <h4><a href="/api">Read My API Documentation</a></h4>
         </div>
       </div>
-    </div>
+    </div> -->
   </body>
 </html>

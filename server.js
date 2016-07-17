@@ -100,7 +100,8 @@ app.post('/api/dancemoves', function (req, res) {
     url: req.body.url,
   });
   newDancemove.save(function handleDBDancemoveSaved(err, savedDancemove) {
-    res.json(savedDancemove);
+    // res.json(savedDancemove);
+    res.redirect('/');
   });
 });
 
@@ -112,6 +113,26 @@ app.delete('/api/dancemoves/:id', function (req, res) {
     res.json(deletedDancemove);
   });
 });
+
+// update dancemove by id
+app.put('/api/dancemoves/:id', function updateDancemove(req,res) {
+  db.Dancemove.findOneAndUpdate({
+    _id: req.params.id},
+    {$set: { name: req.body.name,
+             yearCreated: req.body.yearCreated,
+             participation: req.body.participation,
+             socialContext: req.body.socialContext,
+             url: req.body.url
+           }}, { upsert: true },
+           function(err, foundDancemove){
+          if (err) {
+        return console.log("create error: " + err);
+      } else {
+          console.log(foundDancemove);
+          res.json(foundDancemove);
+        }
+    });
+  });
 
 
 /**********

@@ -1,4 +1,7 @@
 console.log("Sanity Check: JS is working!");
+var template;
+var $dancemovesList;
+var allDancemoves = [];
 
 $(document).ready(function(){
 

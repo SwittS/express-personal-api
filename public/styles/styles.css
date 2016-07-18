@@ -64,6 +64,14 @@ input {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
 
+.spotifyPlayer{
+  text-align: center;
+  width: 100%;
+}
+
+iframe{
+  width: 200px;
+}
 #createMove {
   width: 150px;
   position: absolute;

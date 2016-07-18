@@ -6,7 +6,7 @@ var DancemoveSchema = new Schema({
   yearCreated: Number,
   participation: String,
   socialContext: String,
-  url: String
+  gif: String
 });
 
 var Dancemove = mongoose.model('Dancemove', DancemoveSchema);

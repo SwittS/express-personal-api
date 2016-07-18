@@ -19,6 +19,12 @@ hr{
   color: #F6F6F6;
 }
 
+img {
+  height: 300px;
+  width: 300px;
+  border: 6px double black;
+}
+
 form {
   background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
   background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
@@ -55,13 +61,17 @@ input {
 
 #createMove {
   width: 150px;
-  position: absolute;;
+  position: absolute;
   right: 20px;
   bottom: 20px;
-  background: #F6F6F6;
-  color: #2B2B2B;
+  background: #64a724;
+  color: #FFF;
   font-family: 'Oswald', sans-serif;
   height: 30px;
   border-radius: 15px;
   border: 1p solid #999;
+}
+
+#createMove:hover {
+  border: 1px solid #FFF;
 }

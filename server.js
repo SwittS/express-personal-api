@@ -100,7 +100,7 @@ app.post('/api/dancemoves', function (req, res) {
     yearCreated: req.body.yearCreated,
     participation: req.body.participation,
     socialContext: req.body.socialContext,
-    url: req.body.url,
+    gif: req.body.gif,
   });
   newDancemove.save(function handleDBDancemoveSaved(err, savedDancemove) {
     // res.json(savedDancemove);
@@ -125,7 +125,7 @@ app.put('/api/dancemoves/:id', function updateDancemove(req,res) {
              yearCreated: req.body.yearCreated,
              participation: req.body.participation,
              socialContext: req.body.socialContext,
-             url: req.body.url
+             gif: req.body.gif
            }}, { upsert: true },
            function(err, foundDancemove){
           if (err) {

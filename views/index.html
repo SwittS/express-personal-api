@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Dance moves App</title>
+    <title>Dance Dance Dance</title>
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -23,35 +23,11 @@
     <div class="container">
       <h1 class="text-center">Most Popular Wedding Dance Moves of 2016</h1>
       <hr>
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <form class="form-inline" action="/api/dancemoves" method="POST" id="newDancemove">
-            <div class="form-group">
-              <label for="title">New Dance move: </label>
-              <input type="text" class="form-control" name="name" placeholder="Dance move name">
-            </div>
-            <div class="form-group">
-              <label for="title">Year Created: </label>
-              <input type="text" class="form-control" name="yearCreated" placeholder="Year Created">
-            </div>
-            <div class="form-group">
-              <label for="title">Participation: </label>
-              <input type="text" class="form-control" name="participation" placeholder="Participation">
-            </div>
-            <div class="form-group">
-              <label for="title">Social Context: </label>
-              <input type="text" class="form-control" name="socialContext" placeholder="Social Context">
-            </div>
-            <div class="form-group">
-              <label for="title">URL: </label>
-              <input type="text" class="form-control" name="url" placeholder="URL of gif">
-            </div>
-            <button type="submit" class="btn btn-default" id = "createMove">Create dancemove</button>
-          </form>
+
       <div id='dancemoveTarget'>
         <!-- handlebars template -->
         <script id="dancemoves-template" type="text/x-handlebars-template">
-          <hr>
+
           <table class="table table-bordered">
             <TR>
               <TH COLSPAN="6"><BR><H3>List of dance moves</H3>
@@ -75,11 +51,42 @@
               <TD><button type="button" name="button" class="deleteBtn btn btn-danger center" data-id={{_id}}>Delete</button></TD>
            </TR>
           {{/each}}
+        </table>
         </script>
       </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <form class="form-inline" action="/api/dancemoves" method="POST" id="newDancemove">
+            <div class="form-group">
+              <label>
+              <span>Dance move name: </span><input type="text" name="name" placeholder="What's your dance move called?">
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+              <span>Year Created: </span><input type="text" name="yearCreated" placeholder="What year was it created?">
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+              <span>Participation: </span><input type="text" name="participation" placeholder="How many people can dance at a time?">
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+              <span>Social Context: </label><input type="text" name="socialContext" placeholder="When is this dance appropriate to perform?">
+            </label>
+            </div>
+            <div class="form-group">
+              <label>
+              <span>URL: </span><input type="text" name="url" placeholder="Link a gif of the dance move!">
+              </label>
+            </div>
+            <button type="submit" class="btn btn-default" id = "createMove">Create dancemove</button>
+          </form>
       </div>
     </div>
-</table>
     <!-- <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">

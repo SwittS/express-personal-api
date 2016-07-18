@@ -37,7 +37,7 @@ var dance_moves = [
     name: "The Cabbage Patch",
     yearCreated: 1987,
     participation: "Solo, Partner, and Group",
-    socialContext: "Social, and Street",
+    socialContext: "Social and Street",
     gif: "https://media4.giphy.com/media/a0Cmdhax5VTEc/200.gif"
   },
   {
@@ -60,6 +60,13 @@ var dance_moves = [
     participation: "Group",
     socialContext: "Social",
     gif: "https://media.giphy.com/media/iF2ghsh487piU/giphy.gif"
+  },
+  {
+    name: "The Robot",
+    yearCreated: 1967,
+    participation: "Solo",
+    socialContext: "Social and Street",
+    gif: "https://media.giphy.com/media/3gpfkdQIunv5C/giphy.gif"
   }
 ];
 

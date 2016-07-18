@@ -15,8 +15,13 @@ th,td {
   background-color: #F6F6F6;
 }
 
-hr{
+hr {
   color: #F6F6F6;
+}
+
+h4 {
+  background-color: #F6F6F6;
+  text-align: center;
 }
 
 img {

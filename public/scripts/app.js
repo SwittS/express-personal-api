@@ -49,7 +49,7 @@ function render () {
 
     function handleError(e) {
       console.log('uh oh');
-      $('#newDancemove').text('Failed to load dancemoves, is the server working?');
+      $('#newDancemove').text('Failed to load dance moves, is the server working?');
     }
 
     function newDancemoveSuccess(json) {
